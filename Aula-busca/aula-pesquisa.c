@@ -87,7 +87,7 @@ void pesquisa_sequencial(char *nome_arquivo, char *codigo){
     int   comparacoes = 0;
     
     tpDisciplina disciplina;  
-    while((fread(&disciplina, sizeof(tpDisciplina), 1, arquivo) > 0) && (!achou)){
+    while((!achou) && (fread(&disciplina, sizeof(tpDisciplina), 1, arquivo) > 0)){
         comparacoes++;
         if (strcmp(codigo, disciplina.disc_codi) == 0)
             achou = 1;
